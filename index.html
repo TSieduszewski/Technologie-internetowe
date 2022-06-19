@@ -32,7 +32,6 @@
             background-color: blue;
             color: blanchedalmond;
         }
-       
     </style>
 </head>
 
@@ -159,20 +158,47 @@
         </div>
 
         <div class="container my-2 py-3">
-            Zadanie JS2
+            <form>
+                A : <input type="text" id="a" /><br>
+                B: <input type="text" id="b" /><br>
+                C: <input type="text" id="c" /><br>
+                <input type="button" onClick="calculate()" Value="Oblicz" />
+            </form>
+            <p>Wynik : <br>
+                <span id="result"></span>
+
+                <script>
+                    function calculate() {
+                        numA = document.getElementById("a").value;
+                        numB = document.getElementById("b").value;
+                        numC = document.getElementById("c").value;
+                        var delta = numB * numB - 4 * numA * numC
+
+                        if (delta < 0) {
+                            document.getElementById("result").innerHTML = "Brak rozwiązania";
+                        } else if (delta == 0) {
+                            document.getElementById("result").innerHTML = "X wynosi: " + (0 - numB) / 2*numA;
+                        } else {
+                            var x1 = ((0-numB) - Math.pow(delta, 2)) / 2*numA; 
+                            var x2 = ((0-numB) + Math.pow(delta, 2)) / 2*numA; 
+                            document.getElementById("result").innerHTML = "X1 wynosi: " + x1 + ", X2 wynosi: " + x2;
+                        }
+
+                    }
+                </script>
         </div>
 
         <div class="container my-2 py-3 text-center">
-           
+
             <div id="exerciseNo4" class="exerciseNo4">
                 <span>To jest randomowy tekst</span></br>
                 <button type="button" onclick="change()">Pokoloruj</button>
                 <script>
                     function change() {
-                        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
                         document.getElementById("exerciseNo4").style.backgroundColor = "#" + randomColor;
 
-                        const randomTextColor = Math.floor(Math.random()*16777215).toString(16);
+                        const randomTextColor = Math.floor(Math.random() * 16777215).toString(16);
                         document.getElementById("exerciseNo4").style.color = "#" + randomTextColor;
                     }
                 </script>
