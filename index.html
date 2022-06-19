@@ -13,12 +13,13 @@
     <title>Technologie informacyjne</title>
 
     <style>
-        .firstLine{
+        .firstLine {
             color: rgb(0, 0, 97);
             text-transform: uppercase;
             font-size: 35px;
         }
-        .secondLine{
+
+        .secondLine {
             color: rgb(163, 11, 11);
             text-decoration: underline;
             text-transform: uppercase;
@@ -26,6 +27,12 @@
             font-weight: bold;
             font-size: 35px;
         }
+
+        .exerciseNo4 {
+            background-color: blue;
+            color: blanchedalmond;
+        }
+       
     </style>
 </head>
 
@@ -129,15 +136,15 @@
                     switch (index) {
                         case 0:
                             newTitle += '<span class="firstLine">' + word + " " + '</span>';
-                            
+
                             break;
                         case 1:
                             newTitle += '<span class="firstLine">' + word + " " + '</span>';
-                            
+
                             break;
                         case 2:
-                            newTitle += '</br><span class="secondLine">' + word +'</span>';
-                            
+                            newTitle += '</br><span class="secondLine">' + word + '</span>';
+
                             break;
                         default:
                             console.log("Problem");
@@ -145,9 +152,9 @@
                     console.log(newTitle);
                 });
                 document.getElementById("title").innerHTML = newTitle;
-                
+
             </script>
-            
+
 
         </div>
 
@@ -155,8 +162,23 @@
             Zadanie JS2
         </div>
 
-        <div class="container my-2 py-3">
-            Zadanie JS3
+        <div class="container my-2 py-3 text-center">
+           
+            <div id="exerciseNo4" class="exerciseNo4">
+                <span>To jest randomowy tekst</span></br>
+                <button type="button" onclick="change()">Pokoloruj</button>
+                <script>
+                    function change() {
+                        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                        document.getElementById("exerciseNo4").style.backgroundColor = "#" + randomColor;
+
+                        const randomTextColor = Math.floor(Math.random()*16777215).toString(16);
+                        document.getElementById("exerciseNo4").style.color = "#" + randomTextColor;
+                    }
+                </script>
+
+            </div>
+
         </div>
 
         <div class="container my-2 py-3">
